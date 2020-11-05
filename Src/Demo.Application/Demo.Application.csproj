@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.Adapter\Demo.Adapter.csproj" />
+    <ProjectReference Include="..\Demo.Dtos\Demo.Dtos.csproj" />
+    <ProjectReference Include="..\Demo.Persistence\Demo.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
