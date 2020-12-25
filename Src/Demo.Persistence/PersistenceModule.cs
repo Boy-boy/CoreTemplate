@@ -21,6 +21,10 @@ namespace Demo.Persistence
 
         public override void ConfigureServices(ServiceCollectionContext context)
         {
+            context.Services.AddDbContextPool<DemoDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Demo"));
+            });
             context.Services.AddScoped<IStudentsRepository, StudentsRepository>();
         }
     }

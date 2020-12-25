@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Demo.Mvc
+namespace Demo.WebApi
 {
     public class Program
     {

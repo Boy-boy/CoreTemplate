@@ -1,15 +1,13 @@
 ﻿using Core.Modularity;
 using Core.Modularity.Attribute;
 using Demo.Application;
-using Demo.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Demo.Mvc
+namespace Demo.WebApi
 {
 
     [DependsOn(typeof(ApplicationModule))]
@@ -24,11 +22,7 @@ namespace Demo.Mvc
 
         public override void ConfigureServices(ServiceCollectionContext context)
         {
-            context.Services.AddDbContextPool<DbContext, DemoDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("demo"));
-            });
-            context.Services.AddControllersWithViews();
+            context.Services.AddControllers();
         }
         public override void Configure(ApplicationBuilderContext context)
         {

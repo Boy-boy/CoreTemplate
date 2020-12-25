@@ -1,5 +1,4 @@
 ﻿using Core.Ddd.Domain.Entities;
-using System.Diagnostics.Contracts;
 
 namespace Demo.Domain.Entities
 {
@@ -9,9 +8,6 @@ namespace Demo.Domain.Entities
         {
             Name = name;
             Age = age;
-            AddEvent(new Core.Ddd.Domain.Events.AggregateRootEvent { });
-
-
         }
         public string Name { get; protected set; }
 

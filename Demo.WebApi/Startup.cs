@@ -1,8 +1,8 @@
-using Core.Modularity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Core.Modularity;
 
-namespace Demo.Mvc
+namespace Demo.WebApi
 {
     public class Startup
     {
@@ -10,7 +10,7 @@ namespace Demo.Mvc
         {
             services.AddApplicationManager<StartupModule>();
         }
-       
+
         public void Configure(IApplicationBuilder app)
         {
             app.InitializationApplicationBuilder();
