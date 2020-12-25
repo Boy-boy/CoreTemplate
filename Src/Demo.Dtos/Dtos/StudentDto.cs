@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace Demo.Dtos.Dtos
 {
@@ -8,5 +8,10 @@ namespace Demo.Dtos.Dtos
         public string Name { get; set; }
 
         public int Age { get; set; }
+    }
+
+    public class CreateStudentRequest
+    {
+        public List<StudentDto> StudentDtos { get; set; }
     }
 }

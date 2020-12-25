@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo.Mvc.Controllers
 {
-    [Route("{Controller}")]
+    [Route("api/student")]
     public class StudentController : Controller
     {
         private readonly StudentServices _studentServices;
@@ -15,16 +15,25 @@ namespace Demo.Mvc.Controllers
         {
             _studentServices = studentServices;
         }
+        /// <summary>
+        /// 获取所有学生信息
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("students")]
         public async Task<List<StudentDto>> GetStudents()
         {
             return await _studentServices.GetStudents();
         }
 
+        /// <summary>
+        /// 添加学生信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost("list")]
-        public async Task SetStudents(List<StudentDto> models)
+        public async Task SetStudents([FromBody]CreateStudentRequest model)
         {
-            await _studentServices.SetStudents(models);
+            await _studentServices.SetStudents(model.StudentDtos);
         }
 
     }
