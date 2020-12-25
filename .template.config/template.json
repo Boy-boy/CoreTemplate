@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "gaobo",
+  "classifications": [ "Web/WebAPI" ],
+  "identity": "AspNetCoreTemplate",
+  "name": "AspNetCoreTemplate",
+  "shortName": "coreddd",
+  "sourceName": "Demo",
+  "tags": {
+    "language": "C#"
+  }
+}
