@@ -14,5 +14,11 @@ namespace Demo.Domain.Entities
         public int Age { get; protected set; }
 
 
+
+        public void UpdateAge()
+        {
+
+        }
+
     }
 }

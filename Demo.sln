@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Persistence", "src\Dem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Dtos", "src\Demo.Dtos\Demo.Dtos.csproj", "{D22651F4-5B8B-4916-9769-07719798B963}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Query", "src\Demo.Service\Demo.Query.csproj", "{9E4F38F7-726B-45C0-8FAB-37920B49B173}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Query", "src\Demo.Query\Demo.Query.csproj", "{9E4F38F7-726B-45C0-8FAB-37920B49B173}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.WebApi", "Demo.WebApi\Demo.WebApi.csproj", "{2E0D80B6-72A6-474F-A730-98621B9D7EA3}"
 EndProject

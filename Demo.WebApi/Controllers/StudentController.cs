@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Demo.Mvc.Controllers
+namespace Demo.WebApi.Controllers
 {
     [Route("api/student")]
     public class StudentController : Controller
