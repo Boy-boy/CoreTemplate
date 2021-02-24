@@ -9,11 +9,16 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.OpenApi.Models;
 using System.IO;
+using Core.EventBus.RabbitMQ;
+using Core.EventBus.SqlServer;
 
 namespace Demo.WebApi
 {
 
-    [DependsOn(typeof(ApplicationModule))]
+    [DependsOn(
+        typeof(ApplicationModule),
+        typeof(CoreEventBusRabbitMqModule),
+        typeof(CoreEventBusSqlServerModule))]
     public class StartupModule : CoreModuleBase
     {
         public IConfiguration Configuration { get; }
@@ -26,7 +31,6 @@ namespace Demo.WebApi
         public override void ConfigureServices(ServiceCollectionContext context)
         {
             context.Services.AddControllers();
-
             context.Services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo", Version = "v1" });
@@ -35,6 +39,11 @@ namespace Demo.WebApi
                 c.IncludeXmlComments(xmlPath);
             });
 
+            //若基于本地消息表存储event，需配置      
+            context.Services.Configure<EventBusSqlServerOptions>(options =>
+            {
+                options.ConnectionString = Configuration.GetConnectionString("Demo");
+            });
         }
         public override void Configure(ApplicationBuilderContext context)
         {

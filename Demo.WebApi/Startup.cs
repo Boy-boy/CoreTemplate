@@ -8,12 +8,12 @@ namespace Demo.WebApi
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationManager<StartupModule>();
+            services.ConfigureServiceCollection<StartupModule>();
         }
 
         public void Configure(IApplicationBuilder app)
         {
-            app.InitializationApplicationBuilder();
+            app.BuildApplicationBuilder();
         }
     }
 }

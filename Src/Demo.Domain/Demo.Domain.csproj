@@ -5,12 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Ddd.Domain" Version="3.1.9.1" />
+    <PackageReference Include="Core.Ddd.Domain" Version="3.1.9.11" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Events\" />
   </ItemGroup>
 
 </Project>

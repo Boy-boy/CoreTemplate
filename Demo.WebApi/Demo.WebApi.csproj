@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>F:\gaobo\个人项目\CoreTemplate\Demo.WebApi\Demo.WebApi.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\gaobo\Desktop\个人项目\CoreTemplate\Demo.WebApi\Demo.WebApi.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Core.EventBus.RabbitMQ" Version="3.1.9.11" />
+    <PackageReference Include="Core.EventBus.SqlServer" Version="3.1.9.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

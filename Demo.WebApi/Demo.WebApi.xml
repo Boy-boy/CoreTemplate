@@ -4,13 +4,13 @@
         <name>Demo.WebApi</name>
     </assembly>
     <members>
-        <member name="M:Demo.Mvc.Controllers.StudentController.GetStudents">
+        <member name="M:Demo.WebApi.Controllers.StudentController.GetStudents">
             <summary>
             获取所有学生信息
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Demo.Mvc.Controllers.StudentController.SetStudents(Demo.Dtos.Dtos.CreateStudentRequest)">
+        <member name="M:Demo.WebApi.Controllers.StudentController.SetStudents(Demo.Dtos.Dtos.CreateStudentRequest)">
             <summary>
             添加学生信息
             </summary>

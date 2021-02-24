@@ -32,7 +32,7 @@ namespace Demo.Application
             return result;
         }
 
-        public async Task SetStudents(List<StudentDto> models)
+        public async Task SetStudents(List<AddStudentDto> models)
         {
             // ....
             foreach (var model in models)

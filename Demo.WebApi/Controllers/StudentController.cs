@@ -33,7 +33,7 @@ namespace Demo.WebApi.Controllers
         [HttpPost("list")]
         public async Task SetStudents([FromBody]CreateStudentRequest model)
         {
-            await _studentServices.SetStudents(model.StudentDtos);
+            await _studentServices.SetStudents(model.Students);
         }
 
     }
