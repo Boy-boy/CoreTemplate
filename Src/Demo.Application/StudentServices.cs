@@ -17,7 +17,7 @@ namespace Demo.Application
             IUnitOfWorkManager unitOfWorkManager)
         {
             _studentsRepository = studentsRepository;
-            _unitOfWork = unitOfWorkManager["DemoDbContext"];
+            _unitOfWork = unitOfWorkManager["CustomerDbContext"];
         }
 
         public async Task<List<StudentDto>> GetStudents()

@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Demo.Persistence
 {
-    [DbContextName("DemoDbContext")]
-    public class DemoDbContext : CoreDbContext
+    [DbContextName("CustomerDbContext")]
+    public class CustomerDbContext : CoreDbContext
     {
-        public DemoDbContext(DbContextOptions<DemoDbContext> options)
+        public CustomerDbContext(DbContextOptions<CustomerDbContext> options)
         : base(options)
         {
         }

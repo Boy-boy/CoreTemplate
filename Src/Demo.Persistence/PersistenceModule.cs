@@ -21,12 +21,12 @@ namespace Demo.Persistence
 
         public override void PreConfigureServices(ServiceCollectionContext context)
         {
-            context.Items.Add(nameof(DemoDbContext), typeof(DemoDbContext));
+            context.Items.Add(nameof(CustomerDbContext), typeof(CustomerDbContext));
         }
 
         public override void ConfigureServices(ServiceCollectionContext context)
         {
-            context.Services.AddDbContext<DemoDbContext>(options =>
+            context.Services.AddDbContext<CustomerDbContext>(options =>
             {
                 options.UseInMemoryDatabase("InMemoryDatabase");
             });
