@@ -6,8 +6,8 @@ namespace Demo.Persistence.Repositories
 {
     public class StudentsRepository : DomainRepository<Students, string>, IStudentsRepository
     {
-        public StudentsRepository(IRepository<Students, string> repository, DemoDbContext demoDbContext)
-            : base(repository, demoDbContext)
+        public StudentsRepository(IRepository<Students, string> repository)
+            : base(repository)
         {
 
         }

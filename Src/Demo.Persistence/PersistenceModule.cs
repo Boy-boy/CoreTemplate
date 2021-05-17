@@ -19,11 +19,16 @@ namespace Demo.Persistence
             Configuration = configuration;
         }
 
+        public override void PreConfigureServices(ServiceCollectionContext context)
+        {
+            context.Items.Add(nameof(DemoDbContext), typeof(DemoDbContext));
+        }
+
         public override void ConfigureServices(ServiceCollectionContext context)
         {
-            context.Services.AddDbContextPool<DemoDbContext>(options =>
+            context.Services.AddDbContext<DemoDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Demo"));
+                options.UseInMemoryDatabase("InMemoryDatabase");
             });
             context.Services.AddScoped<IStudentsRepository, StudentsRepository>();
         }

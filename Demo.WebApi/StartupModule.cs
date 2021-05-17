@@ -9,16 +9,18 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.OpenApi.Models;
 using System.IO;
+using Core.EventBus;
 using Core.EventBus.RabbitMQ;
 using Core.EventBus.SqlServer;
+using Core.Uow;
 
 namespace Demo.WebApi
 {
 
     [DependsOn(
         typeof(ApplicationModule),
-        typeof(CoreEventBusRabbitMqModule),
-        typeof(CoreEventBusSqlServerModule))]
+        typeof(CoreEventBusRabbitMqModule)
+       /* typeof(CoreEventBusSqlServerModule)*/)]
     public class StartupModule : CoreModuleBase
     {
         public IConfiguration Configuration { get; }
@@ -42,8 +44,18 @@ namespace Demo.WebApi
             //若基于本地消息表存储event，需配置      
             context.Services.Configure<EventBusSqlServerOptions>(options =>
             {
-                options.ConnectionString = Configuration.GetConnectionString("Demo");
+                options.DbConnectionStr = Configuration.GetConnectionString("Demo");
             });
+
+            #region 若是订阅服务，需要添加以下代码
+            //将MessageHandler注入到容器里
+            //context.Services.TryRegistrarMessageHandlers(new[] { typeof(StartupModule).Assembly });
+            //context.Services.Configure<EventBusOptions>(options =>
+            //{
+            //    //实现自动订阅messageHandler
+            //    options.AutoRegistrarHandlersAssemblies = new[] { typeof(StartupModule).Assembly };
+            //});
+            #endregion
         }
         public override void Configure(ApplicationBuilderContext context)
         {

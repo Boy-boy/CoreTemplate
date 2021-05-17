@@ -14,10 +14,10 @@ namespace Demo.Application
         private readonly IUnitOfWork _unitOfWork;
 
         public StudentServices(IStudentsRepository studentsRepository,
-            IUnitOfWork unitOfWork)
+            IUnitOfWorkManager unitOfWorkManager)
         {
             _studentsRepository = studentsRepository;
-            _unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWorkManager["DemoDbContext"];
         }
 
         public async Task<List<StudentDto>> GetStudents()

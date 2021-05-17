@@ -21,7 +21,7 @@ namespace Demo.Application
 
         public override void ConfigureServices(ServiceCollectionContext context)
         {
-            context.Services.AddScoped<StudentServices, StudentServices>();
+            context.Services.AddScoped<StudentServices>();
         }
     }
 }

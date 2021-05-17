@@ -4,13 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Demo.Persistence
 {
-    public class DemoDbContext:CoreDbContext
+    [DbContextName("DemoDbContext")]
+    public class DemoDbContext : CoreDbContext
     {
         public DemoDbContext(DbContextOptions<DemoDbContext> options)
-        :base(options)
+        : base(options)
         {
         }
 
-        public DbSet<Students> Students{ get; set; }
+        public DbSet<Students> Students { get; set; }
     }
 }
